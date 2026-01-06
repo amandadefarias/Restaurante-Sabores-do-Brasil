@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html class="light" lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sabores do Brasil - Experiência Gastronômica Refinada</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#e18433",
+              "primary-hover": "#c67025",
+              "deep-green": "#124735",
+              "dark-green": "#1A332F",
+              "neutral-sand": "#D7D1C5",
+              "neutral-light": "#f8f7f6",
+              "background-light": "#D7D1C5",
+              "background-dark": "#211811",
+            },
+            fontFamily: {
+              display: ["Be Vietnam Pro", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      .scroll-smooth {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral-sand dark:bg-background-dark text-gray-900 scroll-smooth antialiased">
+    <nav class="fixed top-0 z-50 w-full bg-dark-green/95 backdrop-blur-md shadow-sm border-b border-deep-green">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-dark-green">
+              <span class="material-symbols-outlined text-2xl">restaurant</span>
+            </div>
+            <a class="text-neutral-sand text-xl font-black tracking-tight hover:opacity-80 transition-opacity" href="#">
+              Sabores do Brasil
+            </a>
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a class="text-neutral-sand text-sm font-medium hover:text-primary transition-colors" href="#sobre">Nossa Essência</a>
+            <a class="text-neutral-sand text-sm font-medium hover:text-primary transition-colors" href="#carta">A Carta</a>
+            <a class="text-neutral-sand text-sm font-medium hover:text-primary transition-colors" href="#especialidades">Criações do Chef</a>
+            <a class="text-neutral-sand text-sm font-medium hover:text-primary transition-colors" href="#ambiente">O Ambiente</a>
+            <a class="text-neutral-sand text-sm font-medium hover:text-primary transition-colors" href="#contato">Reservas</a>
+            <a
+              class="flex items-center justify-center h-10 px-5 rounded-lg bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-all shadow-md hover:shadow-lg gap-2"
+              href="https://wa.me/"
+              target="_blank"
+            >
+              <span class="material-symbols-outlined text-[20px]">calendar_clock</span>
+              <span>Reservar Mesa</span>
+            </a>
+          </div>
+
+          <!-- Botão mobile -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-neutral-sand hover:text-primary p-2"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+            >
+              <span id="icon-menu" class="material-symbols-outlined text-3xl">menu</span>
+              <span id="icon-close" class="material-symbols-outlined text-3xl hidden">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu mobile -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-deep-green bg-dark-green">
+        <div class="px-4 pt-2 pb-4 space-y-2">
+          <a class="block text-neutral-sand text-sm font-medium py-2 hover:text-primary transition-colors" href="#sobre">Nossa Essência</a>
+          <a class="block text-neutral-sand text-sm font-medium py-2 hover:text-primary transition-colors" href="#carta">A Carta</a>
+          <a class="block text-neutral-sand text-sm font-medium py-2 hover:text-primary transition-colors" href="#especialidades">Criações do Chef</a>
+          <a class="block text-neutral-sand text-sm font-medium py-2 hover:text-primary transition-colors" href="#ambiente">O Ambiente</a>
+          <a class="block text-neutral-sand text-sm font-medium py-2 hover:text-primary transition-colors" href="#contato">Reservas</a>
+          <a
+            class="mt-2 flex items-center justify-center h-11 px-5 rounded-lg bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-all shadow-md gap-2"
+            href="https://wa.me/"
+            target="_blank"
+          >
+            <span class="material-symbols-outlined text-[20px]">calendar_clock</span>
+            <span>Reservar Mesa</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="relative pt-20" id="home">
+      <div
+        class="relative w-full min-h-[600px] flex items-center justify-center bg-cover bg-center"
+        data-alt="Close up of delicious feijoada clay pot with orange slices and farofa"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDh3nk0R_SlCpfDT_fq-WuuLcCQRG-XpTJO9nlPBB5e_-zX07fD-vi5sMqAjFkcXPDEG2j-W2HR6ZJNc71dsHSOhj5846HIyd-mw_ETudjOcvDN0XJqCqYX_mBqihcw-YFNvSoInh7dj-S_5YD4qfCsc_8uBKL3GNpXtzAsuKILs-6pQHp5fzAcPlj8WSqwAwPnT0-Lb3-eA0sKT6Elj52TWQ5Krm6WT-eZq2r-J5A1YAYNej15lReFULEj9B7ocGqhL_3QoJNgsg");'
+      >
+        <div
+          class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6 py-12 md:py-24"
+        >
+          <span
+            class="inline-block py-1 px-3 rounded-full bg-primary/90 text-white text-xs font-bold uppercase tracking-wider mb-2 animate-fade-in-up"
+          >
+            A Experiência Sabores do Brasil
+          </span>
+          <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-black leading-tight max-w-4xl drop-shadow-lg">
+            A Arte da Gastronomia Brasileira em Portugal
+          </h1>
+          <p class="text-gray-100 text-lg sm:text-xl font-normal max-w-2xl leading-relaxed drop-shadow-md">
+            Descubra uma jornada culinária refinada, com ingredientes de eleição e o ambiente ideal para uma noite memorável.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+            <a
+              class="flex items-center justify-center h-12 px-8 rounded-lg bg-primary hover:bg-primary-hover text-white text-base font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 gap-2 min-w-[200px]"
+              href="https://wa.me/"
+            >
+              <span class="material-symbols-outlined">calendar_clock</span>
+              Solicitar Reserva
+            </a>
+            <a
+              class="flex items-center justify-center h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white text-white text-base font-bold transition-all hover:-translate-y-0.5 min-w-[200px]"
+              href="#especialidades"
+            >
+              Explorar Criações
+            </a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6 mt-8 text-white/90 text-sm font-medium">
+            <span class="flex items-center gap-2"
+              ><span class="material-symbols-outlined text-primary text-lg">hotel_class</span> Excelência Culinária</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="material-symbols-outlined text-primary text-lg">dinner_dining</span> Jantares Exclusivos</span
+            >
+            <span class="flex items-center gap-2"
+              ><span class="material-symbols-outlined text-primary text-lg">event</span> Eventos Privados</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="py-24 bg-dark-green text-neutral-sand" id="sobre">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div class="flex-1 relative order-2 lg:order-1">
+            <div
+              class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 max-w-xl mx-auto lg:max-w-none"
+            >
+              <img
+                alt="Interior of a cozy restaurant with warm lighting and wooden tables"
+                class="w-full h-auto object-cover aspect-[4/3] rounded-2xl"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuoT7YhZahaYDakj1JOwEkXq0NdoKZAN3XJ9nv_UHzZeB_elw0rOf0E52K3WDbZ6R6191ZteKsPsKEYx23TgWzk4bdvFdd8l2oTAAgLE3g1xj6riKQZS6bQL1aAJ5z3Ji7uOYhym19FTgiXQEt3qaxp-G5fAY9WjRgjuLXDzV6QYPMNuo01ASByyn4UEaXSzpCQuhvD_zm9mskNY62ZusC4bakYh79GA0AjSew__mF1FBskEPh1XGsn-EE4DzatLsQ-V5l-Qg7KQ"
+              />
+            </div>
+          </div>
+          <div class="flex-1 space-y-8 order-1 lg:order-2">
+            <div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-sm">
+              <span class="w-8 h-0.5 bg-primary"></span>
+              Nossa Essência
+            </div>
+            <h2 class="text-neutral-sand text-4xl md:text-5xl font-black leading-tight">
+              Sabores do Brasil: Uma Ode à Gastronomia
+            </h2>
+            <p class="text-neutral-sand text-lg leading-relaxed opacity-90">
+              No coração de Portugal, o Sabores do Brasil eleva a culinária nacional a uma experiência de alta gastronomia. Mergulhe em
+              um universo onde a tradição encontra a inovação, resultando em pratos que são verdadeiras obras de arte para o paladar.
+            </p>
+            <p class="text-neutral-sand text-lg leading-relaxed opacity-90">
+              Cada ingrediente é selecionado com critério rigoroso, e cada preparação reflete a paixão de nossos chefs pela autenticidade
+              e pelo requinte. Convidamo-lo a desfrutar de um ambiente de elegância discreta, perfeito para apreciadores de momentos
+              únicos e sabores inesquecíveis.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-6">
+              <div class="flex flex-col gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">workspace_premium</span>
+                <h3 class="font-bold text-neutral-sand text-xl">Ingredientes Raros</h3>
+                <p class="text-sm text-neutral-sand/80">Seleção exclusiva de produtos frescos e autênticos.</p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">palette</span>
+                <h3 class="font-bold text-neutral-sand text-xl">Arte Gastronômica</h3>
+                <p class="text-sm text-neutral-sand/80">
+                  Criações que encantam os sentidos pela estética e sabor.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">local_dining</span>
+                <h3 class="font-bold text-neutral-sand text-xl">Serviço Impecável</h3>
+                <p class="text-sm text-neutral-sand/80">Atendimento atencioso e personalizado para sua total satisfação.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-neutral-sand text-dark-green" id="especialidades">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-dark-green text-4xl md:text-5xl font-black mb-4">Criações do Chef</h2>
+          <p class="text-deep-green text-lg">
+            Pratos emblemáticos que refletem a maestria da nossa cozinha, uma fusão perfeita de tradição e inovação.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div
+            class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-100 overflow-hidden flex flex-col h-full"
+          >
+            <div class="relative h-72 overflow-hidden">
+              <div
+                class="absolute top-4 left-4 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              >
+                Assinatura da Casa
+              </div>
+              <img
+                alt="Plate of Brazilian Feijoada with black beans, rice, and orange slices"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe8XuxpOHto6txxsN__mye2Jf_07hLUmxaADyLVT7ikdaetJbbQEQ56EGUWe80q9EflWb6UyNh7KLQ1DT90TtQ8NjU2AxitP7ZaHB_T3ADYBi6ZSScKPKlmusJEHjOzkNw6n_QAFsTsQo_VolqI9jqsPWbGlK5AvOdNp8yOah1voYMux_s0hXsomWaoh9uQsqao1p7xhsJGwEa00HVMezbgmtfnbGcup7Bni7-wM4YxJd62DRd_p1NcItHzhFNawg1hxwqtSPN8Q"
+              />
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-dark-green mb-3">Feijoada Gourmet</h3>
+              <p class="text-gray-600 text-base mb-5 line-clamp-3">
+                Uma reinterpretação sublime da clássica feijoada, com cortes de carne premium e um preparo meticuloso que realça a
+                complexidade de cada sabor. Servida com acompanhamentos refinados.
+              </p>
+              <div class="mt-auto flex items-center justify-between pt-2">
+                <span class="text-xl font-bold text-primary">€24.00</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-100 overflow-hidden flex flex-col h-full"
+          >
+            <div class="relative h-72 overflow-hidden">
+              <div
+                class="absolute top-4 left-4 z-10 bg-deep-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              >
+                Clássico Revisitado
+              </div>
+              <img
+                alt="Grilled Picanha steak sliced on a board"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFmTvtyONR5i3IKFWjDkz5RM3Tzwda9BFJFbo-nzMFjabeGbdmZtd5dTrqVuTdhA6r_6rzyhWi1cbo-CmBW08X78dySuKZT_ztT_n4orh-Q9rf6w-kDM824O-lwD9dfLAnIDwsyyWscUKjhPwQfDUuC5u9Cwr0nrCtnYtEec_C2jg8p4Z3znBCn4oDfYJ5yOWFhzYLMVgUmkbFPnFdFnMpzqp0pTmDVUoo8jfGdZBHu7odcMU7GEgEbLgvZ0BGlVed7CFclJh_3A"
+              />
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-dark-green mb-3">Picanha Maturada Grelhada</h3>
+              <p class="text-gray-600 text-base mb-5 line-clamp-3">
+                A picanha, corte nobre por excelência, é grelhada à perfeição para garantir suculência e um sabor intenso. Acompanhada por
+                guarnições cuidadosamente elaboradas que complementam a experiência.
+              </p>
+              <div class="mt-auto flex items-center justify-between pt-2">
+                <span class="text-xl font-bold text-primary">€28.00</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-100 overflow-hidden flex flex-col h-full"
+          >
+            <div class="relative h-72 overflow-hidden">
+              <div
+                class="absolute top-4 left-4 z-10 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md"
+              >
+                Delícia Marinha
+              </div>
+              <img
+                alt="Moqueca stew in a traditional clay pot"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8n7snvDLoxlEEX938ZvkAWBtExxMHq84_eix0_4wSTcb33EnahA0cU0wd3OaanmgRqM6h-uqQQBhPH91eQVGSrdT4O3RcEGfx7MXfyovjRP59ww0y11FBtjW9t5NSVQJ1DM1CQlQvHqKVZ7hbpqxARIExgrStRai-H2AXipvhyCC4odIrTq3subz2JqyTt3R7bjv-CE4ie9kxsOnEh3U4eCikxzi3UDPY1kHxp6Wf97USxnvgy6fuB2Wt73UApbzDSI1H9ZARCQ"
+              />
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-dark-green mb-3">Moqueca Imperial de Frutos do Mar</h3>
+              <p class="text-gray-600 text-base mb-5 line-clamp-3">
+                Uma moqueca opulenta com uma seleção primorosa de frutos do mar frescos, imersos em um molho cremoso de leite de coco e
+                dendê, elevando este prato tradicional a um novo patamar de luxo.
+              </p>
+              <div class="mt-auto flex items-center justify-between pt-2">
+                <span class="text-xl font-bold text-primary">€30.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 text-center">
+          <a
+            class="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-deep-green hover:bg-dark-green text-white text-base font-bold transition-all shadow-md gap-2"
+            href="https://wa.me/"
+          >
+            <span class="material-symbols-outlined">menu_book</span>
+            Consultar A Carta Completa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-dark-green text-neutral-sand" id="carta">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+          <div class="max-w-xl">
+            <h2 class="text-neutral-sand text-4xl md:text-5xl font-black mb-4">A Nossa Carta</h2>
+            <p class="text-neutral-sand opacity-90 text-lg">
+              Uma seleção curada que celebra a riqueza dos sabores brasileiros, do aperitivo à sobremesa.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <a class="group relative overflow-hidden rounded-xl aspect-square bg-black shadow-md" href="#">
+            <img
+              alt="Brazilian coffee beans and espresso"
+              class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0oeB7HCMl__aiutNH4qmZObwmOpgi2JXYOj29GbIDOETnkplshFUcumW98B2qAx8b-ZR1sPQGh4deaOnd6_dNZ693p0hVW_9lBDPxTUFJ0l73bNetKIQfhzq429V0UluDlQBVBITOre8_LsEmDSXtV4JGnX_w4ypFO1u-b2_9wS5cOfsFSx9RDONb0vqukosa94faaotlU27dpbWzWDOiZlsUqI-v3pklcshz4HFzuitqvhl-KjelWIQRuSKQejX6E17qn1YwtA"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 to-transparent flex items-end p-6">
+              <span class="text-white text-xl font-bold group-hover:text-primary transition-colors">Cafés e Néctares</span>
+            </div>
+          </a>
+          <a class="group relative overflow-hidden rounded-xl aspect-square bg-black shadow-md" href="#">
+            <img
+              alt="Fried savory snacks croquettes coxinhas"
+              class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBREcYrz2Wpv9jK-OWXuZx0G4_EbpBT656xq15fhaUSdbv955fQIHJQn2SZbhzSSsz2Ak5PG9ZXWMhx_1wv7mGQaDgBi6xEM_AFJlqmJF7G_a3D5phIQtHxx0wAJldO6LkzZhKhSDgDXR51FPjjHMvUUjjx6ffA6JX3EzrIIOF0UaeqB0naTHHYX-ZqnH9wEHbAVQmKdbSQHcCEH5wRb3JldcOXHRSp8NcUIEwH_xrVTemvKE4XDcs5io5eR7R6w_BLMbtM9c1e-g"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 to-transparent flex items-end p-6">
+              <span class="text-white text-xl font-bold group-hover:text-primary transition-colors"
+                >Entradas e Petiscos Finos</span
+              >
+            </div>
+          </a>
+          <a class="group relative overflow-hidden rounded-xl aspect-square bg-black shadow-md" href="#">
+            <img
+              alt="Pancakes and breakfast food"
+              class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnGLTZwEJvDz05EBWzYAcT0bouGWPSLOY9E25wIz0-VG-iy6TETWjMatvGVRTZq5RxCbkgt49gGStZk3MZxhU3T3RWTGLfscekZ88wlMpEy7QLB7wqxqADXxMYh6tes_BZKyYOA4Zzd0FYffvm2dwqbeEUG_de9xppLd0Xe-cXtdG0Fk6NOXuCRykGoNKcN5UxfLFCB0d4cr0vGmXRr8MwuwF3CL_UpNLwbTlIAmaw8n1a8-mO3Hn-J4i0VNoWkpnd_MKZnOuLKA"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 to-transparent flex items-end p-6">
+              <span class="text-white text-xl font-bold group-hover:text-primary transition-colors">Pratos de Autor</span>
+            </div>
+          </a>
+          <a class="group relative overflow-hidden rounded-xl aspect-square bg-black shadow-md" href="#">
+            <img
+              alt="Brazilian chocolate truffles brigadeiros"
+              class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoL9BH9n55o5rY5GyDYwn9p4N4Jpi7M_9XvViE1F_yvUo72LjSXQjv5a3SiUQxvIBwVhkfWqCsyoyYFTlnWtFiT9qG4pws7hVVdAIT5eacXCYCFRY3-uh5iKjkSz8povNQP7vLypJLumiEKZcRXetvgKP8zhZ6jiTmXAslUJHn-OMJJb8v2nJ_2HfreXbLUUZYhsAqS5Neg5QHO-Y4LQvHPtUaedH3ogzYvfhBU7730Muvk3Y_hSuWMqDILpigP2t5kRFybv6u_A"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 to-transparent flex items-end p-6">
+              <span class="text-white text-xl font-bold group-hover:text-primary transition-colors"
+                >Sobremesas de Requinte</span
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-neutral-sand text-dark-green" id="ambiente">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
+          <div class="flex-1 space-y-8">
+            <div class="flex items-center gap-2 text-primary font-bold uppercase tracking-wider text-sm">
+              <span class="w-8 h-0.5 bg-primary"></span>
+              A Atmosfera
+            </div>
+            <h2 class="text-dark-green text-4xl md:text-5xl font-black leading-tight">
+              O Cenário Perfeito para a Sua Experiência
+            </h2>
+            <p class="text-deep-green text-lg leading-relaxed">
+              No Sabores do Brasil, cada detalhe foi concebido para criar um ambiente de sofisticação e conforto. A iluminação intimista,
+              a decoração elegante e a seleção musical criteriosa convergem para uma atmosfera que convida à celebração e ao prazer
+              gastronômico.
+            </p>
+            <p class="text-deep-green text-lg leading-relaxed">
+              Seja para um jantar romântico, um almoço de negócios discreto ou um evento exclusivo, o nosso espaço oferece o cenário ideal
+              para momentos memoráveis. Desfrute da nossa hospitalidade refinada.
+            </p>
+            <ul class="space-y-4 pt-6">
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1 text-3xl">music_note</span>
+                <div>
+                  <h4 class="font-bold text-dark-green text-xl">Harmonia Sonora</h4>
+                  <p class="text-base text-deep-green">
+                    Seleção de Bossa Nova e Jazz para complementar sua refeição.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1 text-3xl">deck</span>
+                <div>
+                  <h4 class="font-bold text-dark-green text-xl">Esplanada Exclusiva</h4>
+                  <p class="text-base text-deep-green">
+                    Um recanto ao ar livre, ideal para desfrutar da brisa e do sol em um ambiente charmoso.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1 grid grid-cols-2 gap-6 p-4 bg-white rounded-xl shadow-2xl">
+            <div class="space-y-6">
+              <img
+                alt="Restaurant interior detail with colorful decoration"
+                class="rounded-xl shadow-lg object-cover w-full aspect-[3/4]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjkPvWzk8C2CsT0WHsYkdUkFbJ86dtMHeHSPj6GgKtZHlHV4TvmQISQfnGbKQGabHrwdYnVnedm07fr-i-BZk2HGbJfUu7OSV0rOVHlYa3WPQjrlC4GtwCtQ4HHhGegYeNHbIBRcF7NohMaisX79mOgsXLVBAvVJJR0fBV1AcEMdqWTi4iHqgwetSWz4tti87ybgv_yrKegc3VHh-ESaHdIQxsv_Nrzhbhs-bjPQad3Nx6rboNyahKScnlV2B78QRlXLm6PHznBg"
+              />
+              <img
+                alt="Chef preparing food in kitchen"
+                class="rounded-xl shadow-lg object-cover w-full aspect-square"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs6JVN0_0gbk9GIB2Z8WGmM5PIido09ohSwHjX5kPNIyP9WxIryKpx9wy1FW4E6YxVpc4h-iovBz1Fb1t_ECEvkvioHmbPj8Ee2gKv2_mxXAcOaPbKnjiT_mqBMDCYfUfv1_Fr8-B1Bh8DG7Q_hETt6HS-r0Q28EBU_thp2id9uMvML0mIgFX_ZXNc5JxMP0Uo4n_gdhSHr4rdrY_7YiN5O2b495K__oacc3OoOoJmems4eHETXxwHIWDGwbN5-y46VxKtbof01g"
+              />
+            </div>
+            <div class="space-y-6 translate-y-8">
+              <img
+                alt="Happy group of friends eating at table"
+                class="rounded-xl shadow-lg object-cover w-full aspect-square"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeeax2LUkkrcJE7y1Or3FdP14_VX0wFQhlynPREiamLnKRNRrq28Ath1ZmR4C-vTMFhAlNOCMTlTBIhTFeIKiEAEElkC8Uj7dROf-9e690K85tLi47PsAXyKPBMMozLo2C8-FfHkrDUZWaw9kFDIONg8BU3PC8W8SDdNB46xn9ZmpuZmNci7X4rJGJ3wawtHzf_0Hzvfesdqdjb4B6jlVZor5hS_JprlXSw-cwFacztigrnhNRDL4mXIfuHIH8l2PsNr9yDS7MyQ"
+              />
+              <img
+                alt="Cocktails on a table"
+                class="rounded-xl shadow-lg object-cover w-full aspect-[3/3]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwoLNtS6pNDD7cK1cms6Bcl3WKEZK051mJxYKL7yC5O8Q_vcMPnnqWJbkU7sPDVvV8RrTIyOvZ83EW122AASK6ZkSkUm4Uet1bXzbchC61wicKl_Jdd-iH5qZllp-tSceTxMU4EstUIxyHLEJY3cPs9DAx62yW9XizeVlvztbSyzglQZGYHY-JVYGaYfFbIg8DSwrXvAcmGiSG81IwXV-kN3OLhXn6pD9HYrjpv7KeW-uS3Tj_PP_-RS8kknnUNpTQ4hAyZQgjQ"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-dark-green text-neutral-sand">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16 text-center">
+        <h2 class="text-4xl md:text-5xl font-black mb-16">Vozes de Nossos Clientes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-deep-green p-10 rounded-2xl border border-white/10 shadow-xl">
+            <div class="flex justify-center mb-5 text-primary">
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+            </div>
+            <p class="text-neutral-sand/90 mb-8 italic text-lg leading-relaxed">
+              "Uma experiência gastronômica inigualável. A feijoada é uma obra-prima e o serviço, impecável. Verdadeiramente superior!"
+            </p>
+            <div class="flex items-center justify-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-neutral-sand/20 overflow-hidden flex items-center justify-center text-lg font-bold">
+                AS
+              </div>
+              <div class="text-left">
+                <h4 class="font-bold text-neutral-sand text-base">Dra. Ana Silva</h4>
+                <p class="text-sm text-neutral-sand/70">Porto, Portugal</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-deep-green p-10 rounded-2xl border border-white/10 shadow-xl">
+            <div class="flex justify-center mb-5 text-primary">
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+            </div>
+            <p class="text-neutral-sand/90 mb-8 italic text-lg leading-relaxed">
+              "O requinte dos pratos e o ambiente sofisticado fazem do Sabores do Brasil um destino obrigatório para apreciadores da boa
+              mesa."
+            </p>
+            <div class="flex items-center justify-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-neutral-sand/20 overflow-hidden flex items-center justify-center text-lg font-bold">
+                RB
+              </div>
+              <div class="text-left">
+                <h4 class="font-bold text-neutral-sand text-base">Eng. Ricardo Bastos</h4>
+                <p class="text-sm text-neutral-sand/70">Lisboa, Portugal</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-deep-green p-10 rounded-2xl border border-white/10 shadow-xl">
+            <div class="flex justify-center mb-5 text-primary">
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star</span>
+              <span class="material-symbols-outlined text-2xl">star_half</span>
+            </div>
+            <p class="text-neutral-sand/90 mb-8 italic text-lg leading-relaxed">
+              "Cada prato é uma descoberta, uma fusão de texturas e sabores. O atendimento cordial e o ambiente acolhedor são um
+              diferencial."
+            </p>
+            <div class="flex items-center justify-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-neutral-sand/20 overflow-hidden flex items-center justify-center text-lg font-bold">
+                MJ
+              </div>
+              <div class="text-left">
+                <h4 class="font-bold text-neutral-sand text-base">Chef Mariana Jesus</h4>
+                <p class="text-sm text-neutral-sand/70">Crítica Gastronômica</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-neutral-sand text-dark-green" id="contato">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+          <div class="p-8 lg:p-12 flex-1 flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-black text-dark-green mb-6">Reserve Sua Experiência</h2>
+            <p class="text-deep-green text-lg mb-8">
+              Convidamo-lo a desfrutar de uma experiência gastronômica única. Faça sua reserva e permita-nos recebê-lo com a excelência
+              que merece.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark-green text-xl">Localização Privilegiada</h4>
+                  <p class="text-deep-green text-base">
+                    Rua das Flores, 123, Baixa, Lisboa<br />Portugal, 1200-000
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark-green text-xl">Horário de Atendimento</h4>
+                  <ul class="text-deep-green text-base space-y-1">
+                    <li class="flex justify-between w-48"><span>Ter - Sex:</span> <span>12:00 - 23:00</span></li>
+                    <li class="flex justify-between w-48"><span>Sáb - Dom:</span> <span>12:00 - 00:00</span></li>
+                    <li class="flex justify-between w-48 font-semibold text-primary">
+                      <span>Segunda:</span> <span>Encerrado</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark-green text-xl">Contatos</h4>
+                  <p class="text-deep-green text-base">+351 210 000 000</p>
+                  <p class="text-deep-green text-base">reservas@saboresdobrasil.pt</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-gray-100">
+              <h4 class="font-bold text-dark-green text-xl mb-4">Consulte-nos para Eventos ou Entregas</h4>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  class="flex-1 bg-primary hover:bg-primary-hover text-white h-12 rounded-lg flex items-center justify-center font-bold transition-colors gap-2 min-w-[160px]"
+                  href="https://wa.me/"
+                >
+                  <span class="material-symbols-outlined">chat</span>
+                  WhatsApp
+                </a>
+                <a
+                  class="flex-1 bg-white border border-gray-200 hover:border-primary text-gray-700 hover:text-primary h-12 rounded-lg flex items-center justify-center font-bold transition-all gap-2 min-w-[160px]"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined">moped</span>
+                  Uber Eats
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2 min-h-[400px] bg-gray-200 relative">
+            <img
+              alt="Map location view of Lisbon streets"
+              class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700"
+              data-location="Lisbon"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqjiB4P-XwGimMKrJY1X1tpcOvm3mLau9sn8vlQwmEMoow3fODNeS3tCmY1rcn6p9o5haXOXpWzW81ruUwR9pffcyFIY4_PjB2pgFZvSAlcOytRQ6QRkUfciNF11SxToCyyghVMxgZfXaISwLO8rgjCdUzVP1heOO9shWOQ26MQbUX2kIwHiE40fpXknV60U4tXy5lMnfMONLig0eNHFq1OpOqMpDZSA3ftLERPWxWWFyOHNyDu74rV-YMSMFD8aWrEPIB93ad3Q"
+            />
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="bg-white p-3 rounded-lg shadow-xl flex items-center gap-2 animate-bounce">
+                <span class="material-symbols-outlined text-primary">restaurant</span>
+                <span class="font-bold text-dark-green">Estamos aqui!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark-green text-neutral-sand py-16 border-t border-white/10">
+      <div class="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white">
+              <span class="material-symbols-outlined text-2xl">restaurant</span>
+            </div>
+            <span class="text-xl font-black tracking-tight">Sabores do Brasil</span>
+          </div>
+          <div class="flex gap-8 text-sm font-medium text-neutral-sand/70">
+            <a class="hover:text-primary transition-colors" href="#sobre">Nossa Essência</a>
+            <a class="hover:text-primary transition-colors" href="#carta">A Carta</a>
+            <a class="hover:text-primary transition-colors" href="#contato">Reservas</a>
+            <a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a>
+          </div>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">public</span>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-lg">camera_alt</span>
+            </a>
+          </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/10 text-center text-xs text-neutral-sand/50">
+          <p>© 2024 Sabores do Brasil. Todos os direitos reservados. Experiência culinária em Portugal.</p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-2xl hover:scale-110 transition-transform hover:bg-primary-hover group"
+      href="https://wa.me/"
+      title="Fale conosco no WhatsApp"
+    >
+      <span class="material-symbols-outlined text-3xl">chat</span>
+      <span
+        class="absolute right-full mr-4 bg-white text-dark-green px-3 py-1 rounded-md text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+      >
+        Reservar agora!
+      </span>
+    </a>
+
+ 
+    <script src="scripts.js"></script>
+  </body>
+</html>
